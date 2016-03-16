@@ -1,0 +1,17 @@
+<h1><%= @error %></h1>
+
+<fieldset>
+  <legend>Add Item</legend>
+  <form method="post" action="/meetups">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="<%= @name %>"/>
+
+    <label for="location">Location</label>
+    <input type="text" name="location" id="location" value="<%= @location %>"/>
+
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description" value="<%= @description %>"/>
+
+    <input type="submit" value="Submit"/>
+  </form>
+</fieldset>
