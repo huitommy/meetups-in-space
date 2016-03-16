@@ -47,36 +47,4 @@ feature "meetup's show page" do
     expect(page).to have_xpath("//img[@src=\"https://avatars2.githubusercontent.com/u/174825?v=3&s=400\"]")
   end
 
-  scenario "user must be logged in to click join button" do
-    meetup1 = Meetup.create(name: "Ruby Hack Night", description: "Learn to Hack with Ruby", location: "Jupiter", user_id: user1.id)
-
-    sign_in_as user2
-    visit "/meetups"
-    click_link "Ruby Hack Night"
-
-    expect(page).to have_selector("input[type='submit'][value = 'Join']")
-
-    click_button "Join"
-
-    expect(page).to have_content("input[type='submit'][value = 'Join']")
-
-  end
-
-
-  scenario "user must be logged in to click join button, if they are the creator, the button is not there" do
-    meetup1 = Meetup.create(name: "Ruby Hack Night", description: "Learn to Hack with Ruby", location: "Jupiter", user_id: user1.id)
-
-    sign_in_as user1
-    visit "/meetups"
-    click_link "Ruby Hack Night"
-
-
-
-  end
-
-  scenario "user must be logged in to click join button"
-
-
-  end
-
 end
